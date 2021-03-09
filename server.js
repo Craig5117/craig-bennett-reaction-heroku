@@ -32,7 +32,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/build')));
 // Handle React routing, return all requests to React app
   app.get('/*', (req, res) => {
-    let url = path.join(__dirname, '../client/build', 'index.html');
+    let url = path.join(__dirname, '/client/build', 'index.html');
     if (!url.startsWith('/app/')) // we're on local windows
     url = url.substring(1);
   res.sendFile(url);
