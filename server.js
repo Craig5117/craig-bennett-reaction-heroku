@@ -31,7 +31,6 @@ app.use(express.urlencoded({ extended: true }));
 if (process.env.NODE_ENV === 'production') {
     // Serve any static files
     app.use(express.static(path.join(__dirname, 'client/build')));
-    app.use(favicon(path.join(__dirname, "public", "favicon.ico")))
     app.use(routes);
   // Handle React routing, return all requests to React app
     app.get('*', function(req, res) {
