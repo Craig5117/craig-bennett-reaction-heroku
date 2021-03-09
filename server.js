@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 
 
-const whitelist = ['http://localhost:3000'​, 'http://localhost:5000']
+const whitelist = ['http://localhost:3000'​, 'http://localhost:5000', "https://morning-wildwood-93642.herokuapp.com/"]
 const corsOptions = {
   origin: function (origin, callback) {
     console.log("** Origin of request " + origin)
