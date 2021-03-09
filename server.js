@@ -8,7 +8,7 @@ const path = require('path');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(routes);
+
 
 
 // const whitelist = ['http://localhost:3000'​, 'http://localhost:5000', "https://craigbennett-reaction.herokuapp.com/"]
@@ -30,6 +30,7 @@ app.use(routes);
 if (process.env.NODE_ENV === 'production') {
     // Serve any static files
     app.use(express.static(path.join(__dirname, 'client/build')));
+    app.use(routes);
   // Handle React routing, return all requests to React app
     app.get('*', function(req, res) {
       res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
