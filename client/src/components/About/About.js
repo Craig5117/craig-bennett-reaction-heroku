@@ -12,8 +12,8 @@ function About() {
         <div className="bio-image"></div>
         <article className="pt-4 px-3 bio-text">
           <p className="py-2">
-            I am a full stack developer with a prior background in translation,
-            working cross culturally in the South Pacific. I have a prior M.A.
+            I am a full stack developer with a background in translation,
+            working cross culturally in the South Pacific. I have a M.A.
             degree with a certificate in linguistics. I have recently obtained a
             certificate in full stack development from Vanderbilt University.
           </p>
@@ -34,7 +34,7 @@ function About() {
             fishing, gaming, and practicing martial arts.
           </p>
           <p className="py-2">
-            Click the link to my porfolio section to see examples of my work.{' '}
+            Click the link to my portfolio section to see examples of my work.{' '}
           </p>
         </article>
       </div>
