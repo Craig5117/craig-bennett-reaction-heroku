@@ -24,6 +24,19 @@ function ContactForm() {
     } else {
       console.log('valid and ready');
       setValidationState('my-valid');
+      await fetch('/api/send_email', {
+        method: 'POST',
+        body: JSON.stringify({
+          name: formState.name,
+          email: formState.email,
+          message: formState.message,
+        }),
+        headers: {
+          Accept: 'application/json, text/plain, */*',
+          'Content-Type': 'application/json',
+          Authorization: 'Bearer somecodehere',
+        },
+      });
       // let res = await fetch('/', {
       //     body: JSON.stringify({
       //         name: formState.name,
