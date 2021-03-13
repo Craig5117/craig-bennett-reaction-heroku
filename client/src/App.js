@@ -7,25 +7,25 @@ import Contact from './components/Contact/Contact';
 import Resume from './components/Resume/Resume'
 
 function App() {
-  const [data, setData] = useState(null);
+  // const [data, setData] = useState(null);
   
   // Fetches our GET route from the Express server. (Note the route we are fetching matches the GET route from server.js
-  const callBackendAPI = async () => {
-    const response = await fetch('/express_backend');
-    const body = await response.json();
+  // const callBackendAPI = async () => {
+  //   const response = await fetch('/express_backend');
+  //   const body = await response.json();
 
-    if (response.status !== 200) {
-      throw Error(body.message) 
-    }
-    return body;
-  };
+  //   if (response.status !== 200) {
+  //     throw Error(body.message) 
+  //   }
+  //   return body;
+  // };
 
   // Call our fetch function below once the component mounts
-  callBackendAPI()
-  .then(res => {
-    setData( res.express )
-  })
-  .catch(err => console.log(err));
+  // callBackendAPI()
+  // .then(res => {
+  //   setData( res.express )
+  // })
+  // .catch(err => console.log(err));
 
   const [currentPage, handlePageChange] = useState('About');
   const renderPage = () => {
@@ -45,7 +45,7 @@ function App() {
     <div className="overflow-hidden">
       <Header handlePageChange={handlePageChange}></Header>
       <main>
-        <div>{data}</div>
+        {/* <div>{data}</div> */}
        {renderPage()}
       </main>
       <Footer />
