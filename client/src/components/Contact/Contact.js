@@ -36,6 +36,10 @@ function ContactForm() {
           'Content-Type': 'application/json',
           Authorization: 'Bearer somecodehere',
         },
+      }).then(response => {
+        if (response.ok) {
+          alert('Your message has been sent! I will get back to you soon.')
+        }
       });
       // let res = await fetch('/', {
       //     body: JSON.stringify({
