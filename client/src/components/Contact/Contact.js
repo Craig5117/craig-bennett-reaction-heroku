@@ -82,7 +82,7 @@ function ContactForm() {
             placeholder="Enter your name"
             name="name"
             onChange={handleChange}
-            defaultValue={name}
+            value={name}
             required
           />
           <Form.Control.Feedback type="invalid">
@@ -97,7 +97,7 @@ function ContactForm() {
             name="email"
             className={validationState}
             onChange={handleChange}
-            defaultValue={email}
+            value={email}
             required
           />
           <Form.Control.Feedback type="invalid">
@@ -111,7 +111,7 @@ function ContactForm() {
             rows={5}
             name="message"
             onChange={handleChange}
-            defaultValue={message}
+            value={message}
             required
           />
           <Form.Control.Feedback type="invalid">
