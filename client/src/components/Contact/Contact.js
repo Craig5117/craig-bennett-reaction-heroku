@@ -40,7 +40,7 @@ function ContactForm() {
         if (response.ok) {
           setFormState( {name: '', email: '', message: ''})
           alert('Your message has been sent! I will get back to you soon.')
-          setValidated(false)          
+          form.reset();        
         }
       });
       console.log(formState);
