@@ -38,23 +38,11 @@ function ContactForm() {
         },
       }).then(response => {
         if (response.ok) {
+          setFormState( {name: '', email: '', message: ''})
           alert('Your message has been sent! I will get back to you soon.')
+          
         }
       });
-      // let res = await fetch('/', {
-      //     body: JSON.stringify({
-      //         name: formState.name,
-      //         email: formState.email,
-      //         message: formState.message
-      //     }),
-      //     headers: {
-      //         Accept: "application/json, text/plain, */*",
-      //         "Content-Type": "application/json",
-      //         Authorization: 'Bearer somecodehere'
-      //     },
-      //     method: "POST",
-      //     credentials: "include"
-      //     })
       console.log(formState);
     }
     setValidated(true);
