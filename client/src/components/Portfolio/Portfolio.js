@@ -54,7 +54,7 @@ function Portfolio() {
           <h3 className="anti-skew">Portfolio</h3>
         </div>
       </div>
-        <p className="portfolio-text">Check out some of my projects below. If you would like to see the repo for my portfolio site, <a href="https://github.com/Craig5117/craigbennett-reaction" target="_blank"
+        <p className="portfolio-text">Check out some of my projects below. If you would like to see the repo for my portfolio site, <a href="https://github.com/Craig5117/craig-bennett-reaction-heroku" target="_blank"
                     rel="nofollow noopener noreferrer">click here</a>.</p>
         <Container className="d-flex flex-wrap mt-5">
         {projects.map((project, i) => ( 

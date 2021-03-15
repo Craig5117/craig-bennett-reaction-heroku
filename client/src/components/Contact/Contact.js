@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { validateEmail } from '../../utils/helpers';
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
 
 function ContactForm() {
   const [validated, setValidated] = useState(false);
@@ -38,18 +38,17 @@ function ContactForm() {
           'Content-Type': 'application/json',
           Authorization: 'Bearer somecodehere',
         },
-      }).then(response => {
+      }).then((response) => {
         if (response.ok) {
-          setFormState( {name: '', email: '', message: ''})
-          setValidationState('')
+          setFormState({ name: '', email: '', message: '' });
+          setValidationState('');
           ReactDOM.findDOMNode(form).reset();
-          alert('Your message has been sent! I will get back to you soon.')
-          return setValidated(false);        
+          alert('Your message has been sent! I will get back to you soon.');
+          return setValidated(false);
         }
       });
       console.log(formState);
     }
-    
   };
 
   function handleChange(e) {
@@ -68,10 +67,9 @@ function ContactForm() {
         </div>
       </div>
       <p className="contact-text">
-        The back-end for the send message feature is not yet finished, but is
-        expected to be ready soon. In the meantime, you may use on one of the
-        blue links below to find me on GitHub, LinkedIn, or send me an email
-        with your default email app.
+        Use the form below to send me an email message and I will get back to
+        you shortly. You may also use on one of the blue links below to find me
+        on GitHub, LinkedIn, or send me an email with your default email app.
       </p>
       <Form
         className="contact-form"
