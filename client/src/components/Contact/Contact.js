@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { validateEmail } from '../../utils/helpers';
+import ReactDOM from 'react-dom'
 
 function ContactForm() {
   const [validated, setValidated] = useState(false);
@@ -40,7 +41,7 @@ function ContactForm() {
         if (response.ok) {
           setFormState( {name: '', email: '', message: ''})
           setValidationState('')
-          document.querySelector('form').classList.remove('was-validated')
+          ReactDOM.findDOMNode(form).reset();
           alert('Your message has been sent! I will get back to you soon.')
           form.reset();        
         }
