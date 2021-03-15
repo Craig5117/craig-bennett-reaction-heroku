@@ -39,6 +39,8 @@ function ContactForm() {
       }).then(response => {
         if (response.ok) {
           setFormState( {name: '', email: '', message: ''})
+          setValidationState('')
+          document.querySelector('form').classList.remove('was-validated')
           alert('Your message has been sent! I will get back to you soon.')
           form.reset();        
         }
