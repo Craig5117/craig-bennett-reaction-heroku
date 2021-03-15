@@ -20,6 +20,7 @@ function ContactForm() {
     e.preventDefault();
     if (form.checkValidity() === false || !validateEmail(email)) {
       console.log('not valid');
+      setValidated(true);
       setValidationState('my-invalid');
       e.stopPropagation();
     } else {
@@ -48,7 +49,7 @@ function ContactForm() {
       });
       console.log(formState);
     }
-    setValidated(true);
+    
   };
 
   function handleChange(e) {
