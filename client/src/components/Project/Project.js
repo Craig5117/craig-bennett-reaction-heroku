@@ -8,7 +8,7 @@ function Project(props) {
     } = props;
 
     const renderLinkDisplay = () => {
-        if (i === 4 || i === 5) {
+        if (i === 4) {
             return (
                 <i className="fas fa-film icon-link icon"></i>
             )

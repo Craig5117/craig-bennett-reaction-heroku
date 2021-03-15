@@ -40,11 +40,11 @@ function Portfolio() {
             rLink: "https://github.com/Craig5117/employee-manager"
         },
         {
-            title: "Roster Gen",
-            details: "A node.js app that generates a company team roster based on user input. It utilizes Inquirer prompts through the command line to get user input for HTML generation. Built in Node with JavaScript, HTML, and CSS.",
-            highlights: "Node Inquirer Bulma",
-            pLink: "https://drive.google.com/file/d/14l8rQxY8J_3VQGWFs0ar7o2uVt6h1qe_/view",
-            rLink: "https://github.com/Craig5117/roster-gen"
+            title: "Google Books Search",
+            details: "A React app with a GraphQL back-end. I converted this from REST to GraphQL on the back-end and front-end.",
+            highlights: "React GraphQL Apollo-GraphQL",
+            pLink: "https://craigs-books-search.herokuapp.com/",
+            rLink: "https://github.com/Craig5117/google-books-search"
         },
     ]
   return (
