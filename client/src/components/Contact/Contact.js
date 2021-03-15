@@ -42,8 +42,8 @@ function ContactForm() {
           setFormState( {name: '', email: '', message: ''})
           setValidationState('')
           ReactDOM.findDOMNode(form).reset();
-          alert('Your message has been sent! I will get back to you soon.')
-          form.reset();        
+          setValidated(true);
+          alert('Your message has been sent! I will get back to you soon.')        
         }
       });
       console.log(formState);
