@@ -68,8 +68,10 @@ function ContactForm() {
       </div>
       <p className="contact-text">
         Use the form below to send me an email message and I will get back to
-        you shortly. You may also use on one of the blue links below to find me
-        on GitHub, LinkedIn, or send me an email with your default email app.
+        you shortly. You must include a name, email and message to submit. Make
+        sure your email address is correct so that I can get in touch with you.
+        You may also use on one of the blue links below to find me on GitHub,
+        LinkedIn, or send me an email with your default email app.
       </p>
       <Form
         className="contact-form"
