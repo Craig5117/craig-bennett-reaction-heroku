@@ -41,7 +41,7 @@ function Portfolio() {
         },
         {
             title: "Google Books Search",
-            details: "A React app with a GraphQL back-end. I converted this from REST to GraphQL on the back-end and front-end.",
+            details: "A React app with a GraphQL back-end. I converted this from REST to GraphQL on the back-end and front-end. Utilizes apollo-server-express on the back-end and apollo-boost on the front-end. Also utilizes JWT for user authorization.",
             highlights: "React GraphQL Apollo-GraphQL",
             pLink: "https://craigs-books-search.herokuapp.com/",
             rLink: "https://github.com/Craig5117/google-books-search"
