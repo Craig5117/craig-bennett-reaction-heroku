@@ -60,6 +60,7 @@ function Project(props) {
                   <div>
                   <Card.Link
                     href={project.pLink}
+                    aria-label="project"
                     target="_blank"
                     rel="nofollow noopener noreferrer"
                   >
@@ -67,6 +68,7 @@ function Project(props) {
                   </Card.Link>
                   <Card.Link
                     href={project.rLink}
+                    aria-label="repository"
                     target="_blank"
                     rel="nofollow noopener noreferrer"
                   >
