@@ -26,11 +26,11 @@ function Portfolio() {
             rLink: "https://github.com/Craig5117/slp-reach"
         },
         {
-            title: "The Tech Blog",
-            details: "A full-stack CMS app for posting articles and opinions about tech relatated news. Utilizes MVC structure, node, Express, MySQL and Sequelize. Deployed to Heroku.",
-            highlights: "Express MySQL Sequelize",
-            pLink: "https://shielded-sea-02519.herokuapp.com/",
-            rLink: "https://github.com/Craig5117/the-tech-blog"
+            title: "CritterTails",
+            details: "A social media platform for pet lovers and their pets. Utilizes React, Redux, GraphQL, node, Express, JWT, image uploads with Cloudinary, MongoDB and Mongoose. Deployed to Heroku.",
+            highlights: "React Redux GraphQL JWT",
+            pLink: "https://crittertails.herokuapp.com/",
+            rLink: "https://github.com/Craig5117/critter"
         },
         {
             title: "Employee Manager",
