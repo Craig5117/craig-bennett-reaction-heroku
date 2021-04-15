@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Container } from 'react-bootstrap';
 import Skill from '../Skill/Skill';
+import resume from '../../assets/Craig-Bennet_Resume.pdf';
 
 function Resume() {
     const skills = [{name: "Front-end",  skillset: ["HTML", "CSS", "JavaScript", "Bootstrap", "Bulma", "Materialize", "React", "React Bootstrap"]}, {name: "Back-end", skillset: ["Node.js", "Express.js", "MySQL", "Sequelize", "MongoDB", "Mongoose", "MongoDB Atlas", "Inquirer.js"]}]
@@ -18,7 +19,7 @@ function Resume() {
       </p>
       <div className="d-flex justify-content-end mb-5 ">
         <div className="skew resume-link text-center">
-          <a href="./Craig-Bennett_Resume.pdf" download>
+          <a href={resume} download>
             <p className="anti-skew resume-link-text">
               My Resume <i className="fas fa-file-download"></i>
             </p>
