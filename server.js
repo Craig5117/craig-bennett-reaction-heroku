@@ -37,7 +37,7 @@ app.use(express.urlencoded({ extended: true }));
       console.log("Redirecting to https")
       console.log(req.headers.host)
       console.log(req.url)
-      return res.redirect('https://' + req.headers.host + req.url);
+      return res.redirect('https://' + req.headers.host);
     } 
     else {
       console.log("Standard route")
