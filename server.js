@@ -4,6 +4,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 const path = require('path');
 
+
 // middleware for post requests
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -37,18 +38,15 @@ app.use(express.urlencoded({ extended: true }));
       console.log("Redirecting to https")
       console.log(req.headers.host)
       console.log(req.url)
-      return res.redirect('https://' + req.headers.host);
+      return res.redirect('https://' + req.headers.host + req.url);
     } 
     else {
-      console.log("Standard route")
-      console.log(req.headers.host)
-      console.log(req.url)
-      return res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+      return next();
     }     
 });
-    // app.get('*', function(req, res) {
-    //   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-    // });
+  app.get('*', function(req, res) {
+      res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    });
 
 
 app.listen(port, () => console.log(`Listening on port ${port}`))
