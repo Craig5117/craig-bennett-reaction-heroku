@@ -28,7 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // if (process.env.NODE_ENV === 'production') {
     // Serve any static files
-    app.use(express.static(path.join(__dirname, 'client/build')));
+    // app.use(express.static(path.join(__dirname, 'client/build')));
     app.use(routes);
   // Handle React routing, return all requests to React app
 
