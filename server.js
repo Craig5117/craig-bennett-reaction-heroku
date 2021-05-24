@@ -33,15 +33,14 @@ app.use(express.urlencoded({ extended: true }));
     app.use(routes);
   // Handle React routing, return all requests to React app
 
-  app.use(function(req, res, next) {
+  app.get('*', function(req, res, next) {
     if (req.headers['x-forwarded-proto'] !== 'https') {
-      return res.redirect('https://' + req.url);
+      return res.redirect('https://' + req.headers.host + req.url);
     } 
     else {
       return next();
     }     
 });
-  
   app.get('*', function(req, res) {
       res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
     });
