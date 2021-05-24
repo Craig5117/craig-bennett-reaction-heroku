@@ -35,7 +35,7 @@ app.use(express.urlencoded({ extended: true }));
 
   app.use(function(req, res, next) {
     if (req.headers['x-forwarded-proto'] !== 'https') {
-      return res.redirect('https://' + req.headers.host + req.url);
+      return res.redirect(301, 'https://craigbennett-reaction.herokuapp.com');
     } 
     else {
       return next();
