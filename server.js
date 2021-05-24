@@ -32,8 +32,27 @@ app.use(express.urlencoded({ extended: true }));
     app.use(express.static(path.join(__dirname, 'client/build')));
     app.use(routes);
   // Handle React routing, return all requests to React app
+  
+//   app.use((req, res, next) => {
+//     if (process.env.NODE_ENV === 'production') {
+//         if (req.headers.host === 'craigbennett-reaction.herokuapp.com')
+//             return res.redirect(301, 'https://www.your-custom-domain.com');
+//         if (req.headers['x-forwarded-proto'] !== 'https')
+//             return res.redirect('https://' + path.join(__dirname, 'client/build', 'index.html'));
+//         else
+//             return next();
+//     } else
+//         return next();
+// });
     app.get('*', function(req, res) {
-      res.redirect('https://craigbennett-reaction@herokuapp.com' + path.join(__dirname, 'client/build', 'index.html'));
+        if (req.headers.host === 'craigbennett-reaction.herokuapp.com')
+            return res.redirect(301, 'craigbennett-reaction.herokuapp.com' + path.join(__dirname, 'client/build', 'index.html'));
+        if (req.headers['x-forwarded-proto'] !== 'https')
+            return res.redirect('https://' + path.join(__dirname, 'client/build', 'index.html'));
+        else
+            return next();
+      
+      // res.redirect('https://craigbennett-reaction@herokuapp.com' + path.join(__dirname, 'client/build', 'index.html'));
     });
   // }
 
