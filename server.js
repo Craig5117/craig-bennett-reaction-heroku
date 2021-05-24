@@ -34,11 +34,9 @@ app.use(express.urlencoded({ extended: true }));
   // Handle React routing, return all requests to React app
 
   app.use(function(req, res, next) {
-    console.log("Headers below:")
-    console.log(req.headers);
     if (req.headers['x-forwarded-proto'] !== 'https') {
       console.log("What up bro?")
-      return res.redirect(301, 'https://craigbennett-reaction.herokuapp.com');
+      return res.redirect('https://craigbennett-reaction.herokuapp.com');
     } 
     else {
       return next();
