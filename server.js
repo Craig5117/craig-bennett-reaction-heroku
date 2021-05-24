@@ -33,7 +33,7 @@ app.use(express.urlencoded({ extended: true }));
     app.use(routes);
   // Handle React routing, return all requests to React app
     app.get('*', function(req, res) {
-      res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+      res.redirect('https://' + req.headers.host + path.join(__dirname, 'client/build', 'index.html'));
     });
   // }
 
