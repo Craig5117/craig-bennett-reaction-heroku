@@ -45,7 +45,7 @@ app.use(express.urlencoded({ extended: true }));
       return next();
     }
         
-// });
+});
     // app.get('*', function(req, res) {
     //   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
     // });
