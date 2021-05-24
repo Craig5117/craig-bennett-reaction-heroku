@@ -29,18 +29,19 @@ app.use(express.urlencoded({ extended: true }));
 
 // if (process.env.NODE_ENV === 'production') {
     // Serve any static files
+    app.use(function(req, res, next) {
+        if (req.headers['x-forwarded-proto'] !== 'https') {
+          return res.redirect('https://' + req.headers.host + req.url);
+        } 
+        else {
+          return next();
+        }     
+    });
     app.use(express.static(path.join(__dirname, 'client/build')));
     app.use(routes);
   // Handle React routing, return all requests to React app
 
-  app.use(function(req, res, next) {
-    if (req.headers['x-forwarded-proto'] !== 'https') {
-      return res.redirect('https://' + req.headers.host + req.url);
-    } 
-    else {
-      return next();
-    }     
-});
+
   app.get('*', function(req, res) {
       res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
     });
