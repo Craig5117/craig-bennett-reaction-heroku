@@ -32,18 +32,18 @@ app.use(express.urlencoded({ extended: true }));
     app.use(routes);
   // Handle React routing, return all requests to React app
 
-//   app.get('*', function(req, res) {
-//     console.log(req.headers)
-//     console.log("Hi Craig!!!")
-//     if (req.headers.host === 'craigbennett-reaction.herokuapp.com')
-//         return res.redirect(301, 'craigbennett-reaction.herokuapp.com' + path.join(__dirname, 'client/build', 'index.html'));
-//     if (req.headers['x-forwarded-proto'] !== 'https') {
-//       // console.log(req.headers)
-//       return res.redirect('https://' + path.join(__dirname, 'client/build', 'index.html'));
-//     } 
-//     else {
-//       return next();
-//     }
+  app.get('*', function(req, res) {
+    console.log(req.headers)
+    console.log("Hi Craig!!!")
+    if (req.headers.host === 'craigbennett-reaction.herokuapp.com')
+        return res.redirect(301, 'craigbennett-reaction.herokuapp.com' + path.join(__dirname, 'client/build', 'index.html'));
+    if (req.headers['x-forwarded-proto'] !== 'https') {
+      console.log(req.headers)
+      return res.redirect('https://' + path.join(__dirname, 'client/build', 'index.html'));
+    } 
+    else {
+      return next();
+    }
         
 // });
     // app.get('*', function(req, res) {
