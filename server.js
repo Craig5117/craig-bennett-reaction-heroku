@@ -1,6 +1,5 @@
 const express = require('express');
 const routes = require("./routes");
-import sslRedirect from 'heroku-ssl-redirect';
 const app = express();
 const port = process.env.PORT || 5000;
 const path = require('path');
@@ -34,20 +33,22 @@ app.use(sslRedirect(['production'], 301));
     app.use(routes);
   // Handle React routing, return all requests to React app
 
-//   app.get('*', function(req, res) {
-//     if (req.headers.host === 'craigbennett-reaction.herokuapp.com')
-//         return res.redirect(301, 'craigbennett-reaction.herokuapp.com' + path.join(__dirname, 'client/build', 'index.html'));
-//     if (req.headers['x-forwarded-proto'] !== 'https')
-//         return res.redirect('https://' + path.join(__dirname, 'client/build', 'index.html'));
-//     else
-//         return next();
-  
-  // res.redirect('https://craigbennett-reaction@herokuapp.com' + path.join(__dirname, 'client/build', 'index.html'));
-// });
- // }
-    app.get('*', function(req, res) {
-      res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-    });
-  // }
+  app.get('*', function(req, res) {
+    console.log(req.headers['x-forwarded-proto'])
+    if (req.headers.host === 'craigbennett-reaction.herokuapp.com')
+        return res.redirect(301, 'craigbennett-reaction.herokuapp.com' + path.join(__dirname, 'client/build', 'index.html'));
+    if (req.headers['x-forwarded-proto'] !== 'https') {
+      console.log(req.headers['x-forwarded-proto'])
+      return res.redirect('https://' + path.join(__dirname, 'client/build', 'index.html'));
+    } 
+    else {
+      return next();
+    }
+        
+});
+    // app.get('*', function(req, res) {
+    //   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    // });
+
 
 app.listen(port, () => console.log(`Listening on port ${port}`))
