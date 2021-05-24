@@ -28,16 +28,17 @@ app.use(express.urlencoded({ extended: true }));
 
 // if (process.env.NODE_ENV === 'production') {
     // Serve any static files
-    // app.use(express.static(path.join(__dirname, 'client/build')));
+    app.use(express.static(path.join(__dirname, 'client/build')));
     app.use(routes);
   // Handle React routing, return all requests to React app
 
   app.get('*', function(req, res, next) {
     if (req.headers['x-forwarded-proto'] !== 'https') {
       console.log("Redirecting to https")
-      return res.redirect('https://' + path.join(__dirname, 'client/build', 'index.html'));
+      return res.redirect('https://' + req.headers.host + req.url);
     } 
     else {
+      console.log("Standard route")
       return next();
     }     
 });
