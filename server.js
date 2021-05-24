@@ -7,7 +7,6 @@ const path = require('path');
 // middleware for post requests
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(sslRedirect(['production'], 301));
 
 
 
