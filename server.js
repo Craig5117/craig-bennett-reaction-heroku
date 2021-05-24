@@ -35,10 +35,14 @@ app.use(express.urlencoded({ extended: true }));
   app.get('*', function(req, res) {
     if (req.headers['x-forwarded-proto'] !== 'https') {
       console.log("Redirecting to https")
+      console.log(req.headers.host)
+      console.log(req.url)
       return res.redirect('https://' + req.headers.host + req.url);
     } 
     else {
       console.log("Standard route")
+      console.log(req.headers.host)
+      console.log(req.url)
       return res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
     }     
 });
