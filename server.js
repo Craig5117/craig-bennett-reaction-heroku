@@ -33,7 +33,7 @@ app.use(express.urlencoded({ extended: true }));
     app.use(routes);
   // Handle React routing, return all requests to React app
 
-  app.get('*', function(req, res) {
+  app.get('*', function(req, res, next) {
     if (req.headers['x-forwarded-proto'] !== 'https') {
       console.log("Redirecting to https")
       console.log(req.headers.host)
