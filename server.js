@@ -1,5 +1,6 @@
 const express = require('express');
 const routes = require("./routes");
+import sslRedirect from 'heroku-ssl-redirect';
 const app = express();
 const port = process.env.PORT || 5000;
 const path = require('path');
@@ -7,7 +8,7 @@ const path = require('path');
 // middleware for post requests
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(sslRedirect(['production'], 301));
 
 
 
@@ -32,27 +33,20 @@ app.use(express.urlencoded({ extended: true }));
     app.use(express.static(path.join(__dirname, 'client/build')));
     app.use(routes);
   // Handle React routing, return all requests to React app
-  
-//   app.use((req, res, next) => {
-//     if (process.env.NODE_ENV === 'production') {
-//         if (req.headers.host === 'craigbennett-reaction.herokuapp.com')
-//             return res.redirect(301, 'https://www.your-custom-domain.com');
-//         if (req.headers['x-forwarded-proto'] !== 'https')
-//             return res.redirect('https://' + path.join(__dirname, 'client/build', 'index.html'));
-//         else
-//             return next();
-//     } else
+
+//   app.get('*', function(req, res) {
+//     if (req.headers.host === 'craigbennett-reaction.herokuapp.com')
+//         return res.redirect(301, 'craigbennett-reaction.herokuapp.com' + path.join(__dirname, 'client/build', 'index.html'));
+//     if (req.headers['x-forwarded-proto'] !== 'https')
+//         return res.redirect('https://' + path.join(__dirname, 'client/build', 'index.html'));
+//     else
 //         return next();
+  
+  // res.redirect('https://craigbennett-reaction@herokuapp.com' + path.join(__dirname, 'client/build', 'index.html'));
 // });
+ // }
     app.get('*', function(req, res) {
-        if (req.headers.host === 'craigbennett-reaction.herokuapp.com')
-            return res.redirect(301, 'craigbennett-reaction.herokuapp.com' + path.join(__dirname, 'client/build', 'index.html'));
-        if (req.headers['x-forwarded-proto'] !== 'https')
-            return res.redirect('https://' + path.join(__dirname, 'client/build', 'index.html'));
-        else
-            return next();
-      
-      // res.redirect('https://craigbennett-reaction@herokuapp.com' + path.join(__dirname, 'client/build', 'index.html'));
+      res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
     });
   // }
 
