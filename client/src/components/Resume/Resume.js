@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Container } from 'react-bootstrap';
 import Skill from '../Skill/Skill';
-import resume from '../../assets/Craig-Bennet_Resume.pdf';
+import resume from '../../assets/Craig-Bennett_Resume.pdf';
 
 function Resume() {
     const skills = [{name: "Front-end",  skillset: ["HTML", "CSS", "JavaScript", "Bootstrap", "Bulma", "Materialize", "React", "React Bootstrap"]}, {name: "Back-end", skillset: ["Node.js", "Express.js", "MySQL", "Sequelize", "MongoDB", "Mongoose", "MongoDB Atlas", "Inquirer.js"]}]

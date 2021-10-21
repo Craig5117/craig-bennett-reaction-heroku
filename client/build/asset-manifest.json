@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.1b297540.chunk.css",
-    "main.js": "/static/js/main.f096018b.chunk.js",
-    "main.js.map": "/static/js/main.f096018b.chunk.js.map",
+    "main.js": "/static/js/main.9d6ae8e0.chunk.js",
+    "main.js.map": "/static/js/main.9d6ae8e0.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.c0467b44.js",
     "runtime-main.js.map": "/static/js/runtime-main.c0467b44.js.map",
     "static/css/2.fabbef47.chunk.css": "/static/css/2.fabbef47.chunk.css",
@@ -14,12 +14,13 @@
     "static/css/2.fabbef47.chunk.css.map": "/static/css/2.fabbef47.chunk.css.map",
     "static/css/main.1b297540.chunk.css.map": "/static/css/main.1b297540.chunk.css.map",
     "static/js/2.f5970686.chunk.js.LICENSE.txt": "/static/js/2.f5970686.chunk.js.LICENSE.txt",
-    "static/media/0.webp": "/static/media/0.df2ca9f0.webp",
-    "static/media/1.webp": "/static/media/1.d98478cf.webp",
-    "static/media/2.webp": "/static/media/2.8e3f32c6.webp",
-    "static/media/3.webp": "/static/media/3.49489b0a.webp",
-    "static/media/4.webp": "/static/media/4.48416d48.webp",
+    "static/media/0.webp": "/static/media/0.894b3b24.webp",
+    "static/media/1.webp": "/static/media/1.8341dab8.webp",
+    "static/media/2.webp": "/static/media/2.df2ca9f0.webp",
+    "static/media/3.webp": "/static/media/3.d98478cf.webp",
+    "static/media/4.webp": "/static/media/4.49489b0a.webp",
     "static/media/5.webp": "/static/media/5.4bf4b6e3.webp",
+    "static/media/Craig-Bennett_Resume.16c9b8fd.pdf": "/static/media/Craig-Bennett_Resume.16c9b8fd.pdf",
     "static/media/index.css": "/static/media/bio-pic-bw-800.8fe74960.webp"
   },
   "entrypoints": [
@@ -27,6 +28,6 @@
     "static/css/2.fabbef47.chunk.css",
     "static/js/2.f5970686.chunk.js",
     "static/css/main.1b297540.chunk.css",
-    "static/js/main.f096018b.chunk.js"
+    "static/js/main.9d6ae8e0.chunk.js"
   ]
 }
